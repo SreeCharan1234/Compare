@@ -337,3 +337,7 @@ def get_active_days_for_users(usernames):
             results.append(active_days)
 
     return results
+
+
+print(get_leetcode_data1("bighneshkumarsahoo58"))
+print(contest_info['topPercentage'])

@@ -227,6 +227,7 @@ if selected == "Dashboard":
         data = get_leetcode_data(st.session_state["Username"])
         user_profile = data['userProfile']
         contest_info = data['userContestRanking']
+        
         ko=[]
         for stat in user_profile['submitStats']['acSubmissionNum']:
             ko=ko+[stat['count']]
@@ -259,6 +260,7 @@ if selected == "Dashboard":
                 z=user_info['Name']
                 ui.metric_card(title="Name", content=z, description="", key="card1")
             with cols[2]:
+                #st.write(contest_info['topPercentage'])
                 if contest_info['topPercentage']:
                     ui.metric_card(title="Top Percentage", content=contest_info['topPercentage'], description="", key="card2")
                 else:
@@ -1003,7 +1005,10 @@ if selected=="1vs1":
                     ui.metric_card(title="User Name", content=z, description="", key="card1")
             perc,ratong = st.columns([1,1])
             with perc:
-                ui.metric_card(title="Top Percentage", content=contest_info['topPercentage'], description="Great🥰", key="card2")
+                if contest_info['topPercentage']:
+                    ui.metric_card(title="Top Percentage", content=contest_info['topPercentage'], description="", key="card2")
+                else:
+                    ui.metric_card(title="Top Percentage", content=0, description="", key="card2") 
             with ratong:
                 ui.metric_card(title="Rating", content=user_profile['profile']['ranking'], description="Good😁", key="card3")         
             st.header("Easy-Medium-Hard😊😑😥", divider=True)
