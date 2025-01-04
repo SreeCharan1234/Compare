@@ -1007,9 +1007,9 @@ if selected=="1vs1":
             with perc:
                 st.write(your_data['userContestRanking'])
                 if your_data['userContestRanking']==None:
-                    ui.metric_card(title="Top Percentage", content=contest_info['topPercentage'], description="", key="card2")
-                else:
                     ui.metric_card(title="Top Percentage", content=0, description="", key="card2") 
+                else:
+                    ui.metric_card(title="Top Percentage", content=contest_info['topPercentage'], description="", key="card2")
             with ratong:
                 ui.metric_card(title="Rating", content=user_profile['profile']['ranking'], description="Good😁", key="card3")         
             st.header("Easy-Medium-Hard😊😑😥", divider=True)
