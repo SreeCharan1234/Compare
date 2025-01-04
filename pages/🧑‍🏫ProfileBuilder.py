@@ -1005,6 +1005,7 @@ if selected=="1vs1":
                     ui.metric_card(title="User Name", content=z, description="", key="card1")
             perc,ratong = st.columns([1,1])
             with perc:
+                st.write(your_data['userContestRanking'])
                 if 'topPercentage' in list(contest_info.keys()):
                     ui.metric_card(title="Top Percentage", content=contest_info['topPercentage'], description="", key="card2")
                 else:
